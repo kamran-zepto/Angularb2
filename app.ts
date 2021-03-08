@@ -22,5 +22,47 @@ function error(message : string) : never {
     throw new Error(message);
 }
 
-console.log(error('my first error message'));
+function returnMyName(name : string) : string {
+    return name;
+}
+
+function dontReturnFunction(): void {
+    myColor = Color.blue;
+}
+
+ function calculate (value1 : number, value2 : number) : number {
+     return value1 + value2;
+ }
+
+ let newCalculation :(val1 : number, val2 : number) => number;
+newCalculation = calculate;
+
+let userData : {name :string, age: number} = {
+    name : 'Kamran',
+    age : 30,
+}
+
+type complexType = {data: number[], output : (all : boolean)=>number[]};
+
+let complex1 : complexType = {
+    data : [1,2,3],
+    output :function (all : boolean):number[] {
+        if(all) {
+            return this.data;
+        }
+        else {
+            return [1];
+        }
+       
+    }
+}
+
+let complex2 : complexType ={
+    data : [3,4,5],
+    output :function (all : boolean):number[]{
+        return this.data;
+    }
+}
+
+
 

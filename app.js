@@ -20,5 +20,36 @@ var myFirstNull = null;
 function error(message) {
     throw new Error(message);
 }
-console.log(error('my first error message'));
+function returnMyName(name) {
+    return name;
+}
+function dontReturnFunction() {
+    myColor = Color.blue;
+}
+function calculate(value1, value2) {
+    return value1 + value2;
+}
+var newCalculation;
+newCalculation = calculate;
+var userData = {
+    name: 'Kamran',
+    age: 30
+};
+var complex1 = {
+    data: [1, 2, 3],
+    output: function (all) {
+        if (all) {
+            return this.data;
+        }
+        else {
+            return [1];
+        }
+    }
+};
+var complex2 = {
+    data: [3, 4, 5],
+    output: function (all) {
+        return this.data;
+    }
+};
 //# sourceMappingURL=app.js.map
