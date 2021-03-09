@@ -64,5 +64,42 @@ let complex2 : complexType ={
     }
 }
 
+// Simple calss 
 
+class Person {
+    MyName : string // by default its public 
+    private Gender : string // you can not access this property directly outside of the class
+    protected Age : number //its meets the definition of private and you can access this property in inherited class
 
+    constructor(paramName : string, userName : string){
+        this.MyName = paramName;
+    }
+    setGender(value: string){
+        this.Gender = value;
+    }
+    getGender(){
+        return this.Gender;
+    }
+    setAge(value: number){
+        this.Age = value;
+    }
+    getAge(){
+        return this.Age;
+    }
+}
+const personObject = new Person('Max', 'Kamran');
+personObject.setGender('Male');
+personObject.setAge(23);
+console.log(personObject.getAge());
+
+// Inheritence of class
+class Max extends Person{
+    myName : 'Max';
+    constructor(userName : string){
+        super('Max',userName);
+    }
+}
+
+let newMax = new Max('Maxi');
+newMax.setGender('Female');
+console.log(newMax.getGender())

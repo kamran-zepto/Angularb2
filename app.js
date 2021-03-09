@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var myFirstString = 'hello';
 var myFirstNumber = 123;
 var myFirstboolean = true;
@@ -52,4 +67,36 @@ var complex2 = {
         return this.data;
     }
 };
+var Person = (function () {
+    function Person(paramName, userName) {
+        this.MyName = paramName;
+    }
+    Person.prototype.setGender = function (value) {
+        this.Gender = value;
+    };
+    Person.prototype.getGender = function () {
+        return this.Gender;
+    };
+    Person.prototype.setAge = function (value) {
+        this.Age = value;
+    };
+    Person.prototype.getAge = function () {
+        return this.Age;
+    };
+    return Person;
+}());
+var personObject = new Person('Max', 'Kamran');
+personObject.setGender('Male');
+personObject.setAge(23);
+console.log(personObject.getAge());
+var Max = (function (_super) {
+    __extends(Max, _super);
+    function Max(userName) {
+        return _super.call(this, 'Max', userName) || this;
+    }
+    return Max;
+}(Person));
+var newMax = new Max('Maxi');
+newMax.setGender('Female');
+console.log(newMax.getGender());
 //# sourceMappingURL=app.js.map
