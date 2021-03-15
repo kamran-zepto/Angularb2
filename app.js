@@ -88,7 +88,6 @@ var Person = (function () {
 var personObject = new Person('Max', 'Kamran');
 personObject.setGender('Male');
 personObject.setAge(23);
-console.log(personObject.getAge());
 var Max = (function (_super) {
     __extends(Max, _super);
     function Max(userName) {
@@ -98,5 +97,84 @@ var Max = (function (_super) {
 }(Person));
 var newMax = new Max('Maxi');
 newMax.setGender('Female');
-console.log(newMax.getGender());
+var Helper = (function () {
+    function Helper() {
+    }
+    Helper.calcCircumference = function (diameter) {
+        return this.PI * diameter;
+    };
+    Helper.PI = 3.14;
+    return Helper;
+}());
+var Project = (function () {
+    function Project() {
+        this.projectName = "Default";
+        this.budget = 10000;
+    }
+    Project.prototype.calcBudget = function (value) {
+        return this.budget * value;
+    };
+    return Project;
+}());
+var Itproject = (function (_super) {
+    __extends(Itproject, _super);
+    function Itproject() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Itproject.prototype.changeName = function (name) {
+        this.projectName = name;
+    };
+    return Itproject;
+}(Project));
+var newProject = new Itproject();
+var Onlyme = (function () {
+    function Onlyme(name) {
+        this.name = name;
+    }
+    Onlyme.getInstance = function () {
+        if (!Onlyme.instance) {
+            Onlyme.instance = new Onlyme('The only One');
+        }
+        return Onlyme.instance;
+    };
+    return Onlyme;
+}());
+var onlyMeInstance = Onlyme.getInstance();
+function greet(person) {
+    console.log('Hello ', person.firstName);
+}
+var person2 = {
+    firstName: 'Max',
+    lastName: 'Min',
+    greet: function (lastName) {
+        console.log(lastName);
+    }
+};
+var Person3 = (function () {
+    function Person3() {
+    }
+    Person3.prototype.greet = function (lastName) {
+        console.log('My name is ', lastName);
+        console.log('My age is ', this.age);
+    };
+    return Person3;
+}());
+var myNewPerson = new Person3();
+myNewPerson.firstName = 'John';
+myNewPerson.lastName = 'Doe';
+myNewPerson.age = 30;
+var myDoubleFunc;
+myDoubleFunc = function (num1, num2) {
+    return num1 * num2;
+};
+var OldPerson = {
+    age: 50,
+    hobbies: ['sports'],
+    firstName: 'Max',
+    greet: function (lastName) {
+        console.log(lastName);
+    }
+};
+greet(OldPerson);
+OldPerson.greet('Min');
 //# sourceMappingURL=app.js.map
