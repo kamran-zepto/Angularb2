@@ -1,6 +1,6 @@
 "use strict";
 //Re-write all this code using TypeScript and Class Features.
-// Exercise 1 - How was your TypeScript Class?
+
 function Car(name) {
     this.name = name;
     this.acceleration = 0;
