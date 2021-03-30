@@ -1,0 +1,1 @@
+//# sourceMappingURL=mynewFile.js.map
