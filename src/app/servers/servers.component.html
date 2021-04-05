@@ -1,0 +1,6 @@
+<label>Username </label>
+<input type="text" class="form-control" [(ngModel)] = "userName">
+<button [disabled]="!userName" class="btn btn-primary"(click)='OnSearch(userName)'>Submit</button>
+<button class =" btn btn-primary" (click)="clearSearch()">Clear</button>
+{{serverwhilecreation}}
+<p>{{userName}}</p>
